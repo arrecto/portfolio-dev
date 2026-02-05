@@ -40,7 +40,7 @@ const PortfolioCard = ({id, title, description, expandedDetails, category, techS
         <div className='group relative'>
             <div className="p-5 h-60 w-60 shadow-lg rounded">
                 <div className='relative w-[70px] h-[70px]'>
-                    <Image src={mainImage} alt={title} fill className='object-contain'/>
+                    <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${mainImage}`} alt={title} fill className='object-contain'/>
                 </div>
                 <h2 className='mt-3 text-accent font-bold'>
                     {title}
