@@ -29,7 +29,7 @@ const projectItems = [
     expandedDetails: 'Machine learning pipeline for predicting Airbnb monthly revenue in Honolulu. Features geospatial encoding with H3 hexagons, competition analysis using BallTree neighbor search, and property classification. XGBoost regression trained on 26,000+ listings with listing-level train/test splits to prevent data leakage. Includes occupancy rate calculation, expense modeling, and comprehensive evaluation visualizations.',
     techStack: ['Python', 'XGBoost', 'Pandas', 'H3', 'scikit-learn', 'Matplotlib'],
     mainImage: '/icons/prediction.svg',
-    url: 'https://drive.google.com/file/d/1TYThy5Xaix6xRCxpr4mJenGH_AvSDAuq/view?usp=sharing',
+    url: 'https://colab.research.google.com/drive/1TYThy5Xaix6xRCxpr4mJenGH_AvSDAuq',
     urlLogo: '/icons/jupyter-logo.svg',
   },
 ]
