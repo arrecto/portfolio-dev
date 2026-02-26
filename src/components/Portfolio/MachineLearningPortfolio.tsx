@@ -40,7 +40,7 @@ const MachineLearningPortfolio = () => {
   const category = 'machineLearning' as const
   return (
     <div className='mx-2 md:mx-5'>
-      <h2 className='font-heading text-xl md:text-2xl font-bold mb-4'>Machine Learning</h2>
+      <h3 className='font-heading text-lg md:text-xl font-semibold mb-4'>Machine Learning</h3>
       <div className='overflow-x-scroll scrollbar-hide'>
         <div className='flex flex-row gap-5 h-65 w-fit mx-auto'>
           {mlItems.map(item => (

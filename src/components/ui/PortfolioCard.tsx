@@ -9,12 +9,14 @@ interface PortfolioCardProps {
     title: string;
     description: string;
     expandedDetails: string;
-    category: "backend" | "machineLearning";
+    category: "backend" | "machineLearning" | "projects";
     techStack: string[];
     mainImage: string;
+    url?: string;
+    urlLogo?: string;
 }
 
-const PortfolioCard = ({id, title, description, expandedDetails, category, techStack, mainImage}: PortfolioCardProps) => {
+const PortfolioCard = ({id, title, description, expandedDetails, category, techStack, mainImage, url, urlLogo}: PortfolioCardProps) => {
 
     const [cardExtend, setCardExtend] = useState(false)
     const [openDialog, setOpenDialog] = useState(false)
@@ -38,16 +40,24 @@ const PortfolioCard = ({id, title, description, expandedDetails, category, techS
     return (
     <div className="flex flex-row shrink-0">
         <div className='group relative'>
-            <div className="p-5 h-60 w-60 shadow-lg rounded">
-                <div className='relative w-[70px] h-[70px]'>
+            <div className="p-5 h-60 w-60 shadow-lg rounded flex flex-col">
+                <div className='relative w-[70px] h-[70px] shrink-0'>
                     <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${mainImage}`} alt={title} fill className='object-contain'/>
                 </div>
                 <h2 className='mt-3 text-accent font-bold'>
                     {title}
                 </h2>
-                <span className='text-sm leading-tight line-clamp-5'>
+                <span className='text-sm leading-tight overflow-y-auto flex-1 min-h-0'>
                     {description}
                 </span>
+                {url && urlLogo && (
+                    <a href={url} target='_blank' rel='noopener noreferrer'
+                       className='mt-2 shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-accent text-white hover:opacity-85 transition-opacity w-fit'
+                       onClick={(e) => e.stopPropagation()}>
+                        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${urlLogo}`} alt="" width={14} height={14}/>
+                        View Project
+                    </a>
+                )}
             </div>
             <div className='opacity-100 md:opacity-0 group-hover:opacity-100 group-active:opacity-100'>
                 <ArrowDropUpIcon
@@ -78,6 +88,13 @@ const PortfolioCard = ({id, title, description, expandedDetails, category, techS
                         {expandedDetails}
                     </div>
                     <TechTags />
+                    {url && urlLogo && (
+                        <a href={url} target='_blank' rel='noopener noreferrer'
+                           className='mt-3 inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-1.5 rounded-full bg-accent text-white hover:opacity-85 transition-opacity w-fit'>
+                            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${urlLogo}`} alt="" width={16} height={16}/>
+                            View Project
+                        </a>
+                    )}
                 </div>
             </div>
         </div>
@@ -95,6 +112,13 @@ const PortfolioCard = ({id, title, description, expandedDetails, category, techS
                     {expandedDetails}
                 </div>
                 <TechTags />
+                {url && urlLogo && (
+                    <a href={url} target='_blank' rel='noopener noreferrer'
+                       className='mt-3 inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-1.5 rounded-full bg-accent text-white hover:opacity-85 transition-opacity w-fit'>
+                        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${urlLogo}`} alt="" width={16} height={16}/>
+                        View Project
+                    </a>
+                )}
             </DialogContent>
         </Dialog>
     </div>
