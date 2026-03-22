@@ -3,6 +3,16 @@ import PortfolioCard from '../ui/PortfolioCard'
 
 const projectItems = [
   {
+    id: 'pen',
+    title: 'Pen',
+    description: 'MCP-powered RAG chatbot that exposes structured retrieval tools to LLMs for context-grounded responses over custom knowledge bases.',
+    expandedDetails: 'RAG chatbot built using the Model Context Protocol (MCP) to expose structured retrieval tools to LLMs, enabling context-grounded responses over custom knowledge bases through standardized tool-call interfaces. MCP allows the LLM to call retrieval tools with typed inputs and outputs, making the retrieval pipeline transparent and composable.',
+    techStack: ['Python', 'MCP', 'RAG', 'LLM'],
+    mainImage: '/icons/openwebui.svg',
+    url: 'https://chat.pen-air.mooo.com',
+    urlLogo: '/icons/github-logo.svg',
+  },
+  {
     id: 'perg-viewer',
     title: 'PERG Viewer',
     description: 'Desktop application for analyzing Pattern Electroretinogram signals from the PERG-IOBA medical database with wavelet-based denoising.',

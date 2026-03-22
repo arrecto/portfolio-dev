@@ -12,8 +12,8 @@ export default function Home() {
           <ProjectsPortfolio/>
           <div className='space-y-5 md:space-y-10'>
             <h2 className='font-heading text-xl md:text-2xl font-bold mx-2 md:mx-5 opacity-60'>Experience</h2>
-            <BackendPortfolio/>
             <MachineLearningPortfolio/>
+            <BackendPortfolio/>
           </div>
         </div>
       </main>

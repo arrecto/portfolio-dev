@@ -3,6 +3,22 @@ import PortfolioCard from '../ui/PortfolioCard'
 
 const mlItems = [
   {
+    id: 'agent-matching',
+    title: 'AI Agent Matching',
+    description: 'Gemini-powered agent matching system that ranks real estate agents by personality compatibility, language, and cultural fit.',
+    expandedDetails: 'Multi-step AI pipeline that matches homebuyers with agents based on personality compatibility, language, cultural background, and professional track record. Combines full-text search pre-filtering with LLM-powered ranking to produce a personalized shortlist with compatibility scores and AI-generated explanations for each match.',
+    techStack: ['Gemini API', 'FastAPI', 'Meilisearch', 'PostgreSQL', 'Python'],
+    mainImage: '/icons/openwebui.svg',
+  },
+  {
+    id: 'market-analysis',
+    title: 'AI Market Analysis',
+    description: 'LLM-powered market analysis feature that translates 5 years of real estate transaction data into plain-English insights.',
+    expandedDetails: 'Aggregates historical transaction data and current market status across multiple geographic scopes — state, city, neighborhood, and building level — then feeds structured summaries to an LLM to generate a professional market overview and key actionable metrics. Results are cached to reduce latency with graceful fallback if the LLM is unavailable.',
+    techStack: ['Gemini API', 'FastAPI', 'PostgreSQL', 'Redis', 'Python'],
+    mainImage: '/icons/pricing.svg',
+  },
+  {
     id: 'pricing-models',
     title: 'Property Pricing Models',
     description: 'XGBoost regression models for real estate rental price predictions across long-term and short-term rental markets.',
